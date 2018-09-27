@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+<tableList databaseId="0" databaseName="MYSQL" databaseProductName="MySQL" generation="2018-09-27 09:22:38">
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Admin" name="admin" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idadmin" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idadmin" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idadmin" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tendangnhap" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tendangnhap" javaType="java.lang.String" jdbcTypeCode="12" label="Tendangnhap" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="matkhau" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="matkhau" javaType="java.lang.String" jdbcTypeCode="12" label="Matkhau" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idrole" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="INT" inputType="number" javaName="idrole" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idrole" notNull="false" selected="true"/>
+<fk name="idrole">
+<fkcol colname="idrole" colref="idrole" deferrable="7" deleterule="3" sequence="1" tablename="admin" tableref="role" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="idrole" id="LINK_FK_idrole_O" inverseSideOf="" javaName="role" javaType="Role" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="admin" targetEntity="Role" targetTableName="role" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idrole" nullable="true" referencedColumnName="idrole" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Benh" name="benh" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idbenh" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idbenh" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idbenh" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="iddanhmuc" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="iddanhmuc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Iddanhmuc" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tenbenh" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tenbenh" javaType="java.lang.String" jdbcTypeCode="12" label="Tenbenh" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="trieuchung" dbNotNull="false" dbPosition="4" dbSize="100" dbTypeName="VARCHAR" inputType="text" javaName="trieuchung" javaType="java.lang.String" jdbcTypeCode="12" label="Trieuchung" maxLength="100" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="cachchua" dbNotNull="false" dbPosition="5" dbSize="100" dbTypeName="VARCHAR" inputType="text" javaName="cachchua" javaType="java.lang.String" jdbcTypeCode="12" label="Cachchua" maxLength="100" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="idbenh" id="LINK_FK_idbenh_I" inverseSideOf="LINK_FK_idbenh_O" javaName="listOfDinhky" javaType="java.util.List" joinTableName="" mappedBy="benh" optional="" owningSide="false" sourceTableName="benh" targetEntity="Dinhky" targetTableName="dinhky" used="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Danhmuc" name="danhmuc" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="iddanhmuc" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="iddanhmuc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Iddanhmuc" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tendanhmuc" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tendanhmuc" javaType="java.lang.String" jdbcTypeCode="12" label="Tendanhmuc" maxLength="45" notNull="false" selected="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Dinhky" name="dinhky" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idkhamdinhky" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idkhamdinhky" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idkhamdinhky" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idsinhvien" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="idsinhvien" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idsinhvien" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idhocki" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="idhocki" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idhocki" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idbenh" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="INT" inputType="number" javaName="idbenh" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idbenh" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="chieucao" dbNotNull="false" dbPosition="5" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="chieucao" javaType="java.lang.String" jdbcTypeCode="12" label="Chieucao" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="cannang" dbNotNull="false" dbPosition="6" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="cannang" javaType="java.lang.String" jdbcTypeCode="12" label="Cannang" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="huyetap" dbNotNull="false" dbPosition="7" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="huyetap" javaType="java.lang.String" jdbcTypeCode="12" label="Huyetap" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="loaisuckhoe" dbNotNull="false" dbPosition="8" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="loaisuckhoe" javaType="java.lang.String" jdbcTypeCode="12" label="Loaisuckhoe" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="ketluan" dbNotNull="false" dbPosition="9" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="ketluan" javaType="java.lang.String" jdbcTypeCode="12" label="Ketluan" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="chuandoan" dbNotNull="false" dbPosition="10" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="chuandoan" javaType="java.lang.String" jdbcTypeCode="12" label="Chuandoan" maxLength="45" notNull="false" selected="true"/>
+<fk name="idbenh">
+<fkcol colname="idbenh" colref="idbenh" deferrable="7" deleterule="3" sequence="1" tablename="dinhky" tableref="benh" updaterule="3"/>
+</fk>
+<fk name="idhocki">
+<fkcol colname="idhocki" colref="idhocki" deferrable="7" deleterule="3" sequence="1" tablename="dinhky" tableref="hocki" updaterule="3"/>
+</fk>
+<fk name="idsinhvien">
+<fkcol colname="idsinhvien" colref="idsinhvien" deferrable="7" deleterule="3" sequence="1" tablename="dinhky" tableref="sinhvien" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="idhocki" id="LINK_FK_idhocki_O" inverseSideOf="" javaName="hocki" javaType="Hocki" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="dinhky" targetEntity="Hocki" targetTableName="hocki" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idhocki" nullable="true" referencedColumnName="idhocki" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="idbenh" id="LINK_FK_idbenh_O" inverseSideOf="" javaName="benh" javaType="Benh" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="dinhky" targetEntity="Benh" targetTableName="benh" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idbenh" nullable="true" referencedColumnName="idbenh" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="idsinhvien" id="LINK_FK_idsinhvien_O" inverseSideOf="" javaName="sinhvien" javaType="Sinhvien" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="dinhky" targetEntity="Sinhvien" targetTableName="sinhvien" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idsinhvien" nullable="true" referencedColumnName="idsinhvien" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Hocki" name="hocki" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idhocki" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idhocki" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idhocki" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tenhocki" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tenhocki" javaType="java.lang.String" jdbcTypeCode="12" label="Tenhocki" maxLength="45" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="idhocki" id="LINK_FK_idhocki_I" inverseSideOf="LINK_FK_idhocki_O" javaName="listOfDinhky" javaType="java.util.List" joinTableName="" mappedBy="hocki" optional="" owningSide="false" sourceTableName="hocki" targetEntity="Dinhky" targetTableName="dinhky" used="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Loaithuoc" name="loaithuoc" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idloaithuoc" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idloaithuoc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idloaithuoc" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tenloai" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tenloai" javaType="java.lang.String" jdbcTypeCode="12" label="Tenloai" maxLength="45" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="thuoc_ibfk_1" id="LINK_FK_thuoc_ibfk_1_I" inverseSideOf="LINK_FK_thuoc_ibfk_1_O" javaName="listOfThuoc" javaType="java.util.List" joinTableName="" mappedBy="loaithuoc" optional="" owningSide="false" sourceTableName="loaithuoc" targetEntity="Thuoc" targetTableName="thuoc" used="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Nhasanxuat" name="nhasanxuat" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idnhasanxuat" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idnhasanxuat" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idnhasanxuat" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tennhasanxuat" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tennhasanxuat" javaType="java.lang.String" jdbcTypeCode="12" label="Tennhasanxuat" maxLength="45" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="thuoc_ibfk_2" id="LINK_FK_thuoc_ibfk_2_I" inverseSideOf="LINK_FK_thuoc_ibfk_2_O" javaName="listOfThuoc" javaType="java.util.List" joinTableName="" mappedBy="nhasanxuat" optional="" owningSide="false" sourceTableName="nhasanxuat" targetEntity="Thuoc" targetTableName="thuoc" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="idnhasanxuat" id="LINK_FK_idnhasanxuat_I" inverseSideOf="LINK_FK_idnhasanxuat_O" javaName="listOfThietbiyte" javaType="java.util.List" joinTableName="" mappedBy="nhasanxuat" optional="" owningSide="false" sourceTableName="nhasanxuat" targetEntity="Thietbiyte" targetTableName="thietbiyte" used="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Role" name="role" schema="">
+<column dbComment="" dbDefaultValue="" dbName="idrole" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idrole" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idrole" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="45" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="sinhvien_ibfk_1" id="LINK_FK_sinhvien_ibfk_1_I" inverseSideOf="LINK_FK_sinhvien_ibfk_1_O" javaName="listOfSinhvien" javaType="java.util.List" joinTableName="" mappedBy="role" optional="" owningSide="false" sourceTableName="role" targetEntity="Sinhvien" targetTableName="sinhvien" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="idrole" id="LINK_FK_idrole_I" inverseSideOf="LINK_FK_idrole_O" javaName="listOfAdmin" javaType="java.util.List" joinTableName="" mappedBy="role" optional="" owningSide="false" sourceTableName="role" targetEntity="Admin" targetTableName="admin" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="yte_ibfk_1" id="LINK_FK_yte_ibfk_1_I" inverseSideOf="LINK_FK_yte_ibfk_1_O" javaName="listOfYte" javaType="java.util.List" joinTableName="" mappedBy="role" optional="" owningSide="false" sourceTableName="role" targetEntity="Yte" targetTableName="yte" used="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Sinhvien" name="sinhvien" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idsinhvien" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idsinhvien" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idsinhvien" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="hoten" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="hoten" javaType="java.lang.String" jdbcTypeCode="12" label="Hoten" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="gioitinh" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="gioitinh" javaType="java.lang.String" jdbcTypeCode="12" label="Gioitinh" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="namsinh" dbNotNull="false" dbPosition="4" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="namsinh" javaType="java.lang.String" jdbcTypeCode="12" label="Namsinh" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="socmt" dbNotNull="false" dbPosition="5" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="socmt" javaType="java.lang.String" jdbcTypeCode="12" label="Socmt" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="diachi" dbNotNull="false" dbPosition="6" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="diachi" javaType="java.lang.String" jdbcTypeCode="12" label="Diachi" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="chuyennganh" dbNotNull="false" dbPosition="7" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="chuyennganh" javaType="java.lang.String" jdbcTypeCode="12" label="Chuyennganh" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="khoa" dbNotNull="false" dbPosition="8" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="khoa" javaType="java.lang.String" jdbcTypeCode="12" label="Khoa" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="masv" dbNotNull="false" dbPosition="9" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="masv" javaType="java.lang.String" jdbcTypeCode="12" label="Masv" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="matkhau" dbNotNull="false" dbPosition="10" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="matkhau" javaType="java.lang.String" jdbcTypeCode="12" label="Matkhau" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idrole" dbNotNull="false" dbPosition="11" dbSize="10" dbTypeName="INT" inputType="number" javaName="idrole" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idrole" notNull="false" selected="true"/>
+<fk name="sinhvien_ibfk_1">
+<fkcol colname="idrole" colref="idrole" deferrable="7" deleterule="3" sequence="1" tablename="sinhvien" tableref="role" updaterule="3"/>
+</fk>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="sucosuckhoe_ibfk_1" id="LINK_FK_sucosuckhoe_ibfk_1_I" inverseSideOf="LINK_FK_sucosuckhoe_ibfk_1_O" javaName="listOfSucosuckhoe" javaType="java.util.List" joinTableName="" mappedBy="sinhvien" optional="" owningSide="false" sourceTableName="sinhvien" targetEntity="Sucosuckhoe" targetTableName="sucosuckhoe" used="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="idsinhvien" id="LINK_FK_idsinhvien_I" inverseSideOf="LINK_FK_idsinhvien_O" javaName="listOfDinhky" javaType="java.util.List" joinTableName="" mappedBy="sinhvien" optional="" owningSide="false" sourceTableName="sinhvien" targetEntity="Dinhky" targetTableName="dinhky" used="true"/>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="sinhvien_ibfk_1" id="LINK_FK_sinhvien_ibfk_1_O" inverseSideOf="" javaName="role" javaType="Role" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="sinhvien" targetEntity="Role" targetTableName="role" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idrole" nullable="true" referencedColumnName="idrole" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Sucosuckhoe" name="sucosuckhoe" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idsucosuckhoe" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idsucosuckhoe" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idsucosuckhoe" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idsinhvien" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="idsinhvien" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idsinhvien" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="ngay" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="ngay" javaType="java.lang.String" jdbcTypeCode="12" label="Ngay" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="loaisuco" dbNotNull="false" dbPosition="4" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="loaisuco" javaType="java.lang.String" jdbcTypeCode="12" label="Loaisuco" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="bienphap" dbNotNull="false" dbPosition="5" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="bienphap" javaType="java.lang.String" jdbcTypeCode="12" label="Bienphap" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="mucdo" dbNotNull="false" dbPosition="6" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="mucdo" javaType="java.lang.String" jdbcTypeCode="12" label="Mucdo" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="nguoixuly" dbNotNull="false" dbPosition="7" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="nguoixuly" javaType="java.lang.String" jdbcTypeCode="12" label="Nguoixuly" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idthuoc" dbNotNull="false" dbPosition="8" dbSize="10" dbTypeName="INT" inputType="number" javaName="idthuoc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idthuoc" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idthietbiyte" dbNotNull="false" dbPosition="9" dbSize="10" dbTypeName="INT" inputType="number" javaName="idthietbiyte" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idthietbiyte" notNull="false" selected="true"/>
+<fk name="sucosuckhoe_ibfk_1">
+<fkcol colname="idsinhvien" colref="idsinhvien" deferrable="7" deleterule="3" sequence="1" tablename="sucosuckhoe" tableref="sinhvien" updaterule="3"/>
+</fk>
+<fk name="sucosuckhoe_ibfk_2">
+<fkcol colname="idthuoc" colref="idthuoc" deferrable="7" deleterule="3" sequence="1" tablename="sucosuckhoe" tableref="thuoc" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="sucosuckhoe_ibfk_2" id="LINK_FK_sucosuckhoe_ibfk_2_O" inverseSideOf="" javaName="thuoc" javaType="Thuoc" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="sucosuckhoe" targetEntity="Thuoc" targetTableName="thuoc" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idthuoc" nullable="true" referencedColumnName="idthuoc" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="sucosuckhoe_ibfk_1" id="LINK_FK_sucosuckhoe_ibfk_1_O" inverseSideOf="" javaName="sinhvien" javaType="Sinhvien" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="sucosuckhoe" targetEntity="Sinhvien" targetTableName="sinhvien" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idsinhvien" nullable="true" referencedColumnName="idsinhvien" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Thietbiyte" name="thietbiyte" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idthietbiyte" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idthietbiyte" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idthietbiyte" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idnhasanxuat" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="idnhasanxuat" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idnhasanxuat" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tenthietbi" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tenthietbi" javaType="java.lang.String" jdbcTypeCode="12" label="Tenthietbi" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="soluong" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="INT" inputType="number" javaName="soluong" javaType="java.lang.Integer" jdbcTypeCode="4" label="Soluong" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="cachdung" dbNotNull="false" dbPosition="5" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="cachdung" javaType="java.lang.String" jdbcTypeCode="12" label="Cachdung" maxLength="45" notNull="false" selected="true"/>
+<fk name="idnhasanxuat">
+<fkcol colname="idnhasanxuat" colref="idnhasanxuat" deferrable="7" deleterule="3" sequence="1" tablename="thietbiyte" tableref="nhasanxuat" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="idnhasanxuat" id="LINK_FK_idnhasanxuat_O" inverseSideOf="" javaName="nhasanxuat" javaType="Nhasanxuat" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="thietbiyte" targetEntity="Nhasanxuat" targetTableName="nhasanxuat" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idnhasanxuat" nullable="true" referencedColumnName="idnhasanxuat" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Thuoc" name="thuoc" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idthuoc" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idthuoc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idthuoc" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idloaithuoc" dbNotNull="false" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="idloaithuoc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idloaithuoc" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idnhasanxuat" dbNotNull="false" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="idnhasanxuat" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idnhasanxuat" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tenthuoc" dbNotNull="false" dbPosition="4" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tenthuoc" javaType="java.lang.String" jdbcTypeCode="12" label="Tenthuoc" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tacdung" dbNotNull="false" dbPosition="5" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tacdung" javaType="java.lang.String" jdbcTypeCode="12" label="Tacdung" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="cachdung" dbNotNull="false" dbPosition="6" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="cachdung" javaType="java.lang.String" jdbcTypeCode="12" label="Cachdung" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="ngaynhap" dbNotNull="false" dbPosition="7" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="ngaynhap" javaType="java.lang.String" jdbcTypeCode="12" label="Ngaynhap" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="soluong" dbNotNull="false" dbPosition="8" dbSize="10" dbTypeName="INT" inputType="number" javaName="soluong" javaType="java.lang.Integer" jdbcTypeCode="4" label="Soluong" notNull="false" selected="true"/>
+<fk name="thuoc_ibfk_1">
+<fkcol colname="idloaithuoc" colref="idloaithuoc" deferrable="7" deleterule="3" sequence="1" tablename="thuoc" tableref="loaithuoc" updaterule="3"/>
+</fk>
+<fk name="thuoc_ibfk_2">
+<fkcol colname="idnhasanxuat" colref="idnhasanxuat" deferrable="7" deleterule="3" sequence="1" tablename="thuoc" tableref="nhasanxuat" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="thuoc_ibfk_1" id="LINK_FK_thuoc_ibfk_1_O" inverseSideOf="" javaName="loaithuoc" javaType="Loaithuoc" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="thuoc" targetEntity="Loaithuoc" targetTableName="loaithuoc" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idloaithuoc" nullable="true" referencedColumnName="idloaithuoc" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="sucosuckhoe_ibfk_2" id="LINK_FK_sucosuckhoe_ibfk_2_I" inverseSideOf="LINK_FK_sucosuckhoe_ibfk_2_O" javaName="listOfSucosuckhoe" javaType="java.util.List" joinTableName="" mappedBy="thuoc" optional="" owningSide="false" sourceTableName="thuoc" targetEntity="Sucosuckhoe" targetTableName="sucosuckhoe" used="true"/>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="thuoc_ibfk_2" id="LINK_FK_thuoc_ibfk_2_O" inverseSideOf="" javaName="nhasanxuat" javaType="Nhasanxuat" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="thuoc" targetEntity="Nhasanxuat" targetTableName="nhasanxuat" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idnhasanxuat" nullable="true" referencedColumnName="idnhasanxuat" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Tintuc" name="tintuc" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idtintuc" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idtintuc" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idtintuc" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tieude" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tieude" javaType="java.lang.String" jdbcTypeCode="12" label="Tieude" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="ngaydang" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="ngaydang" javaType="java.lang.String" jdbcTypeCode="12" label="Ngaydang" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="noidung" dbNotNull="false" dbPosition="4" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="noidung" javaType="java.lang.String" jdbcTypeCode="12" label="Noidung" maxLength="45" notNull="false" selected="true"/>
+</table>
+<table catalog="qlsuckhoe" databaseType="TABLE" javaBean="Yte" name="yte" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="idyte" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="idyte" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idyte" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="hoten" dbNotNull="false" dbPosition="2" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="hoten" javaType="java.lang.String" jdbcTypeCode="12" label="Hoten" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="gioitinh" dbNotNull="false" dbPosition="3" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="gioitinh" javaType="java.lang.String" jdbcTypeCode="12" label="Gioitinh" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="namsinh" dbNotNull="false" dbPosition="4" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="namsinh" javaType="java.lang.String" jdbcTypeCode="12" label="Namsinh" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="diachi" dbNotNull="false" dbPosition="5" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="diachi" javaType="java.lang.String" jdbcTypeCode="12" label="Diachi" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="socmt" dbNotNull="false" dbPosition="6" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="socmt" javaType="java.lang.String" jdbcTypeCode="12" label="Socmt" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="sodt" dbNotNull="false" dbPosition="7" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="sodt" javaType="java.lang.String" jdbcTypeCode="12" label="Sodt" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="chucvu" dbNotNull="false" dbPosition="8" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="chucvu" javaType="java.lang.String" jdbcTypeCode="12" label="Chucvu" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="tendangnhap" dbNotNull="false" dbPosition="9" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="tendangnhap" javaType="java.lang.String" jdbcTypeCode="12" label="Tendangnhap" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="matkhau" dbNotNull="false" dbPosition="10" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="matkhau" javaType="java.lang.String" jdbcTypeCode="12" label="Matkhau" maxLength="45" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="idrole" dbNotNull="false" dbPosition="11" dbSize="10" dbTypeName="INT" inputType="number" javaName="idrole" javaType="java.lang.Integer" jdbcTypeCode="4" label="Idrole" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="ytecol" dbNotNull="true" dbPosition="12" dbSize="45" dbTypeName="VARCHAR" inputType="text" javaName="ytecol" javaType="java.lang.String" jdbcTypeCode="12" label="Ytecol" maxLength="45" notEmpty="true" notNull="true" selected="true"/>
+<fk name="yte_ibfk_1">
+<fkcol colname="idrole" colref="idrole" deferrable="7" deleterule="3" sequence="1" tablename="yte" tableref="role" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="yte_ibfk_1" id="LINK_FK_yte_ibfk_1_O" inverseSideOf="" javaName="role" javaType="Role" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="yte" targetEntity="Role" targetTableName="role" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="idrole" nullable="true" referencedColumnName="idrole" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+</tableList>
+</root>
